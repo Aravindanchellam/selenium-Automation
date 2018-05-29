@@ -1,0 +1,47 @@
+from selenium import webdriver
+from threading import Timer
+
+# Open the browser
+firefox = webdriver.Firefox()
+
+url = 'www.gmail.com'
+username = 'aravindan1994c@gmail.com'
+password = 'aravindanchellam011'
+
+# Go the link google.com
+firefox.get("http://www.gmail.com")
+
+#Click on signin
+# firefox.find_element_by_xpath("//div[@class='VmOpGe'"]).click("//div[@class='VmOpGe'")
+#
+
+def enterProfile():
+    # Enter username
+    firefox.find_element_by_xpath("//input[@id='identifierId']").send_keys('aravindan1994c@gmail.com')
+
+    # Clik next
+    firefox.find_element_by_xpath("//div[@id='identifierNext']/content[@class='CwaK9' and 1]/span[@class='RveJvd snByac' and 1]").click()
+    # Timer
+    Timer(5,enterPassword).start()
+
+def enterPassword():
+    # Enter password
+    firefox.find_element_by_xpath(
+        "//div[@id='password']/div[@class='aCsJod oJeWuf' and 1]/div[@class='aXBtI Wic03c' and 1]/div[@class='Xb9hP' and 1]/input[@class='whsOnd zHQkBf' and 1]").send_keys(
+        'aravindanchellam011')
+
+    # Clik next
+    firefox.find_element_by_xpath(
+        "//div[@id='passwordNext']/content[@class='CwaK9' and 1]/span[@class='RveJvd snByac' and 1]").click()
+    Timer(10, signout).start()
+
+def signout():
+    # singing out form mail
+    firefox.find_element_by_name("//").click()
+
+enterProfile()
+
+# I see my pic
+# firefox.find_element_by_id()
+
+
