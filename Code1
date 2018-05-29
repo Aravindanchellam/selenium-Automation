@@ -1,0 +1,25 @@
+from selenium import webdriver
+from threading import Timer
+
+# Open the browser
+firefox = webdriver.Firefox()
+
+# go to the link
+firefox.get("http://www.amazon.in")
+
+def productNames():
+
+    firefox.find_element_by_xpath("//a[@id='nav-link-shopall']").click()
+    Timer(5, selectproduct).start()
+
+def selectproduct():
+    # select the product
+    firefox.find_element_by_xpath("//a[text()='Amazon Echo']").click()
+    Timer(10, cartadding).start()
+
+def cartadding():
+    # add them in cart
+    firefox.switch_to_window(firefox.window_handles[1])
+    firefox.find_element_by_xpath("//input[@id='add-to-cart-button']").click()
+
+productNames()
