@@ -5,8 +5,8 @@ from threading import Timer
 firefox = webdriver.Firefox()
 
 url = 'www.gmail.com'
-username = 'aravindan1994c@gmail.com'
-password = 'aravindanchellam011'
+username = 'username'
+password = 'Password'
 
 # Go the link google.com
 firefox.get("http://www.gmail.com")
@@ -17,7 +17,7 @@ firefox.get("http://www.gmail.com")
 
 def enterProfile():
     # Enter username
-    firefox.find_element_by_xpath("//input[@id='identifierId']").send_keys('aravindan1994c@gmail.com')
+    firefox.find_element_by_xpath("//input[@id='identifierId']").send_keys('Type User Name')
 
     # Clik next
     firefox.find_element_by_xpath("//div[@id='identifierNext']/content[@class='CwaK9' and 1]/span[@class='RveJvd snByac' and 1]").click()
@@ -28,7 +28,7 @@ def enterPassword():
     # Enter password
     firefox.find_element_by_xpath(
         "//div[@id='password']/div[@class='aCsJod oJeWuf' and 1]/div[@class='aXBtI Wic03c' and 1]/div[@class='Xb9hP' and 1]/input[@class='whsOnd zHQkBf' and 1]").send_keys(
-        'aravindanchellam011')
+        'Type Password')
 
     # Clik next
     firefox.find_element_by_xpath(
